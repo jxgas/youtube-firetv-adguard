@@ -62,7 +62,7 @@
 ||adtrafficquality.google^
 ||google-analytics.com^
 ||analytics.google.com^
-||[www.google-analytics.com^](http://www.google-analytics.com^)
+||www.google-analytics.com^
 ||ssl.google-analytics.com^
 
 ! =========================================================
