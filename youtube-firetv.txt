@@ -1,0 +1,113 @@
+! Title: YouTube Fire TV AdGuard
+! Description: YouTube advertising and tracking filter for Amazon Fire TV / Fire TV Stick / Fire TV Cube
+! Homepage: https://github.com/jxgas/youtube-firetv-adguard
+! Source: https://github.com/jxgas/youtube-firetv-adguard
+! Version: 2026.10.04.1
+! Expires: 12 hours
+!
+! Target:
+! Amazon Fire TV
+! Fire TV Stick
+! Fire TV Cube
+! YouTube App
+!
+! =========================================================
+! IMPORTANT
+! =========================================================
+! This filter is designed for DNS-level filtering.
+! It intentionally DOES NOT block:
+!
+! youtube.com
+! googlevideo.com
+! ytimg.com
+! youtubei.googleapis.com
+!
+! Blocking these services can break normal YouTube playback.
+!
+! =========================================================
+! YouTube advertising endpoints
+! =========================================================
+
+||ads.youtube.com^
+||ad.youtube.com^
+||youtube.com/pagead^
+||youtube.com/ptracking^
+||youtube.com/api/stats/ads^
+||youtube.com/api/stats/atr^
+||youtube.com/get_midroll_info^
+
+! =========================================================
+! Google advertising
+! =========================================================
+
+||doubleclick.net^
+||ad.doubleclick.net^
+||googleads.g.doubleclick.net^
+||pagead2.googlesyndication.com^
+||googlesyndication.com^
+||googleadservices.com^
+||adservice.google.com^
+||ads.google.com^
+
+! =========================================================
+! Google advertising infrastructure
+! =========================================================
+
+||pubads.g.doubleclick.net^
+||securepubads.g.doubleclick.net^
+||cm.g.doubleclick.net^
+||stats.g.doubleclick.net^
+||pagead46.l.doubleclick.net^
+||imasdk.googleapis.com^
+
+! =========================================================
+! Advertising measurement
+! =========================================================
+
+||adtrafficquality.google^
+||google-analytics.com^
+||analytics.google.com^
+||[www.google-analytics.com^](http://www.google-analytics.com^)
+||ssl.google-analytics.com^
+||stats.g.doubleclick.net^
+
+! =========================================================
+! Amazon advertising
+! =========================================================
+
+||amazon-adsystem.com^
+||aax.amazon-adsystem.com^
+||advertising-api.amazon.com^
+||fls-na.amazon.com^
+
+! =========================================================
+! Common advertising networks
+! =========================================================
+
+||adnxs.com^
+||adsrvr.org^
+||advertising.com^
+||criteo.com^
+||criteo.net^
+||taboola.com^
+||outbrain.com^
+
+! =========================================================
+! Tracking
+! =========================================================
+
+||scorecardresearch.com^
+||quantserve.com^
+||demdex.net^
+||omtrdc.net^
+
+! =========================================================
+! Essential YouTube services
+! DO NOT BLOCK
+! =========================================================
+
+@@||googlevideo.com^
+@@||ytimg.com^
+@@||youtubei.googleapis.com^
+@@||youtube-nocookie.com^
+@@||googleusercontent.com^
