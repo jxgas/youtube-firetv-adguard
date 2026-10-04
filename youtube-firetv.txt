@@ -2,7 +2,7 @@
 ! Description: YouTube advertising and tracking filter for Amazon Fire TV / Fire TV Stick / Fire TV Cube
 ! Homepage: https://github.com/jxgas/youtube-firetv-adguard
 ! Source: https://github.com/jxgas/youtube-firetv-adguard
-! Version: 2026.10.04.1
+! Version: 2026.10.04.2
 ! Expires: 12 hours
 !
 ! Target:
@@ -15,8 +15,8 @@
 ! IMPORTANT
 ! =========================================================
 ! This filter is designed for DNS-level filtering.
-! It intentionally DOES NOT block:
 !
+! DO NOT BLOCK:
 ! youtube.com
 ! googlevideo.com
 ! ytimg.com
@@ -25,16 +25,11 @@
 ! Blocking these services can break normal YouTube playback.
 !
 ! =========================================================
-! YouTube advertising endpoints
+! YouTube advertising domains
 ! =========================================================
 
 ||ads.youtube.com^
 ||ad.youtube.com^
-||youtube.com/pagead^
-||youtube.com/ptracking^
-||youtube.com/api/stats/ads^
-||youtube.com/api/stats/atr^
-||youtube.com/get_midroll_info^
 
 ! =========================================================
 ! Google advertising
@@ -69,7 +64,6 @@
 ||analytics.google.com^
 ||[www.google-analytics.com^](http://www.google-analytics.com^)
 ||ssl.google-analytics.com^
-||stats.g.doubleclick.net^
 
 ! =========================================================
 ! Amazon advertising
