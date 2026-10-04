@@ -2,39 +2,31 @@
 ! Description: YouTube advertising and tracking filter for Amazon Fire TV / Fire TV Stick / Fire TV Cube
 ! Homepage: https://github.com/jxgas/youtube-firetv-adguard
 ! Source: https://github.com/jxgas/youtube-firetv-adguard
-! Version: 2026.10.04.2
+! Version: 2026.10.04.3
 ! Expires: 12 hours
-!
 ! Target:
 ! Amazon Fire TV
 ! Fire TV Stick
 ! Fire TV Cube
 ! YouTube App
-!
 ! =========================================================
 ! IMPORTANT
 ! =========================================================
 ! This filter is designed for DNS-level filtering.
-!
 ! DO NOT BLOCK:
 ! youtube.com
 ! googlevideo.com
 ! ytimg.com
 ! youtubei.googleapis.com
-!
 ! Blocking these services can break normal YouTube playback.
-!
 ! =========================================================
 ! YouTube advertising domains
 ! =========================================================
-
 ||ads.youtube.com^
 ||ad.youtube.com^
-
 ! =========================================================
 ! Google advertising
 ! =========================================================
-
 ||doubleclick.net^
 ||ad.doubleclick.net^
 ||googleads.g.doubleclick.net^
@@ -43,41 +35,33 @@
 ||googleadservices.com^
 ||adservice.google.com^
 ||ads.google.com^
-
 ! =========================================================
 ! Google advertising infrastructure
 ! =========================================================
-
 ||pubads.g.doubleclick.net^
 ||securepubads.g.doubleclick.net^
 ||cm.g.doubleclick.net^
 ||stats.g.doubleclick.net^
 ||pagead46.l.doubleclick.net^
 ||imasdk.googleapis.com^
-
 ! =========================================================
 ! Advertising measurement
 ! =========================================================
-
 ||adtrafficquality.google^
 ||google-analytics.com^
 ||analytics.google.com^
 ||www.google-analytics.com^
 ||ssl.google-analytics.com^
-
 ! =========================================================
 ! Amazon advertising
 ! =========================================================
-
 ||amazon-adsystem.com^
 ||aax.amazon-adsystem.com^
 ||advertising-api.amazon.com^
 ||fls-na.amazon.com^
-
 ! =========================================================
 ! Common advertising networks
 ! =========================================================
-
 ||adnxs.com^
 ||adsrvr.org^
 ||advertising.com^
@@ -85,21 +69,17 @@
 ||criteo.net^
 ||taboola.com^
 ||outbrain.com^
-
 ! =========================================================
 ! Tracking
 ! =========================================================
-
 ||scorecardresearch.com^
 ||quantserve.com^
 ||demdex.net^
 ||omtrdc.net^
-
 ! =========================================================
 ! Essential YouTube services
 ! DO NOT BLOCK
 ! =========================================================
-
 @@||googlevideo.com^
 @@||ytimg.com^
 @@||youtubei.googleapis.com^
