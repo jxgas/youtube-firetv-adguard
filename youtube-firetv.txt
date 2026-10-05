@@ -2,7 +2,7 @@
 ! Description: YouTube advertising and tracking filter for Amazon Fire TV / Fire TV Stick / Fire TV Cube
 ! Homepage: https://github.com/jxgas/youtube-firetv-adguard
 ! Source: https://github.com/jxgas/youtube-firetv-adguard
-! Version: 2026.10.04.3
+! Version: 2026.10.04.4
 ! Expires: 12 hours
 ! Target:
 ! Amazon Fire TV
@@ -27,61 +27,165 @@
 ! =========================================================
 ! Google advertising
 ! =========================================================
+```text
+! Title: OpenBox YouTube Fire TV Ad Filter FINAL
+! Version: 2026.10
+! Purpose: YouTube / Fire TV network-level ad filtering
+! Format: AdGuard / Adblock style
+!
+! IMPORTANT:
+! Do NOT block youtube.com globally
+! Do NOT block youtubei.googleapis.com
+! Do NOT block googlevideo.com globally
+! YouTube normal video playback requires these services.
+
+
+! ============================================================
+! YouTube advertising
+! ============================================================
+
+||ads.youtube.com^
+||ad.youtube.com^
+
+
+! ============================================================
+! Google / DoubleClick advertising
+! ============================================================
+
 ||doubleclick.net^
 ||ad.doubleclick.net^
+||g.doubleclick.net^
 ||googleads.g.doubleclick.net^
-||pagead2.googlesyndication.com^
-||googlesyndication.com^
-||googleadservices.com^
-||adservice.google.com^
-||ads.google.com^
-! =========================================================
-! Google advertising infrastructure
-! =========================================================
 ||pubads.g.doubleclick.net^
 ||securepubads.g.doubleclick.net^
 ||cm.g.doubleclick.net^
 ||stats.g.doubleclick.net^
+||static.doubleclick.net^
+||m.doubleclick.net^
+||fls.doubleclick.net^
 ||pagead46.l.doubleclick.net^
+
+
+! ============================================================
+! Google advertising services
+! ============================================================
+
+||googlesyndication.com^
+||pagead2.googlesyndication.com^
+||tpc.googlesyndication.com^
+
+||googleadservices.com^
+||www.googleadservices.com^
+||partner.googleadservices.com^
+
+||adservice.google.com^
+||ads.google.com^
+
+
+! ============================================================
+! YouTube / Google advertising SDK
+! ============================================================
+
 ||imasdk.googleapis.com^
-! =========================================================
-! Advertising measurement
-! =========================================================
 ||adtrafficquality.google^
+
+
+! ============================================================
+! Google tracking / measurement
+! ============================================================
+
 ||google-analytics.com^
-||analytics.google.com^
 ||www.google-analytics.com^
 ||ssl.google-analytics.com^
-! =========================================================
-! Amazon advertising
-! =========================================================
+||analytics.google.com^
+
+||googletagservices.com^
+||googletagmanager.com^
+
+
+! ============================================================
+! YouTube TVHTML5 advertising
+!
+! This is the most important new rule in the FINAL version.
+!
+! Based on the current uBlock/uAssets YouTube TVHTML5 rule.
+!
+! Do NOT replace this with:
+!
+! ||googlevideo.com^
+!
+! because googlevideo.com also carries normal video.
+! ============================================================
+
+||googlevideo.com/initplayback?source=youtube&*c=TVHTML5&*oad=
+
+
+! ============================================================
+! Fire TV / Android TV advertising infrastructure
+! ============================================================
+
 ||amazon-adsystem.com^
 ||aax.amazon-adsystem.com^
-||advertising-api.amazon.com^
-||fls-na.amazon.com^
-! =========================================================
-! Common advertising networks
-! =========================================================
-||adnxs.com^
+||assoc-amazon.com^
+
 ||adsrvr.org^
-||advertising.com^
+||adnxs.com^
 ||criteo.com^
 ||criteo.net^
-||taboola.com^
-||outbrain.com^
-! =========================================================
-! Tracking
-! =========================================================
-||scorecardresearch.com^
-||quantserve.com^
-||demdex.net^
-||omtrdc.net^
-! =========================================================
-! Essential YouTube services
-! DO NOT BLOCK
-! =========================================================
+
+
+! ============================================================
+! Additional common advertising endpoints
+! ============================================================
+
+||adservice.*^
+||advertising.*^
+
+
+! ============================================================
+! Explicit exceptions
+!
+! Keep normal YouTube playback working.
+! ============================================================
+
+@@||youtube.com^
+@@||www.youtube.com^
+@@||youtubei.googleapis.com^
 @@||googlevideo.com^
 @@||ytimg.com^
-@@||youtubei.googleapis.com^
 @@||youtube-nocookie.com^
 @@||googleusercontent.com^
+
+
+! ============================================================
+! DO NOT ADD THE FOLLOWING
+!
+! These are intentionally excluded because they can break
+! YouTube playback or require browser-side response rewriting.
+!
+! ||googlevideo.com^
+! ||youtube.com^
+! ||youtubei.googleapis.com^
+!
+! youtube.com##+js(...)
+! json-prune
+! trusted-replace-fetch-response
+! trusted-replace-xhr-response
+!
+! Also do NOT block:
+!
+! ||www.youtube.com/youtubei/v1/player
+!
+! The player endpoint is required for normal playback.
+!
+! uBlock handles this differently by modifying response data,
+! for example:
+!
+! "adPlacements" -> "no_ads"
+! "adSlots"       -> "no_ads"
+! "playerAds"     -> removed
+!
+! Those operations cannot safely be represented as ordinary
+! DNS/domain blocking rules.
+! ============================================================
+```
